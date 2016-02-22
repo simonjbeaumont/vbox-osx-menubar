@@ -783,15 +783,6 @@
 		[[NSColor whiteColor] set];
 		NSRectFill(NSMakeRect(x, 0, width - x, height));
 	}
-	
-	if (!highlighted)
-	{
-		NSShadow* shadw = [[[NSShadow alloc] init] autorelease];
-		[shadw setShadowOffset:NSMakeSize(0, -1.5)];
-		[shadw setShadowColor:[NSColor whiteColor]];
-		[shadw setShadowBlurRadius:0.5];
-		[shadw set];
-	}
 		
 	NSUInteger compositingOperation;
 	
