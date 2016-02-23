@@ -26,7 +26,7 @@
 		if (!highlightedSMIcon)
 			highlightedSMIcon = [self menuImage:normalSMIcon createHighlighted:YES isSMIcon:YES];
 		
-		[statusItem setImage:[self menuImage:normalSMIcon createHighlighted:NO isSMIcon:YES]];
+		[statusItem setImage:[self menuImage:normalSMIcon createHighlighted:YES isSMIcon:YES]];
 		[statusItem setAlternateImage:highlightedSMIcon];
 	}
 	else
@@ -397,7 +397,7 @@
 						
 						NSImage *image = [NSImage imageNamed:imageName];
 						
-						[vmItem setIcon:[self menuImage:image createHighlighted:NO isSMIcon:NO]];
+						[vmItem setIcon:[self menuImage:image createHighlighted:YES isSMIcon:NO]];
 						[vmItem setAlternateIcon:[self menuImage:image createHighlighted:YES isSMIcon:NO]];
 						
 						[vmMenuItems addObject:vmItem];
@@ -439,7 +439,7 @@
 						
 				NSImage *image = [NSImage imageNamed:imageName];
 				
-				[vmItem setIcon:[self menuImage:image createHighlighted:NO isSMIcon:NO]];
+				[vmItem setIcon:[self menuImage:image createHighlighted:YES isSMIcon:NO]];
 				[vmItem setAlternateIcon:[self menuImage:image createHighlighted:YES isSMIcon:NO]];
 				
 				[vmMenuItems addObject:vmItem];
@@ -790,7 +790,7 @@
 	if (highlighted)
 		compositingOperation = NSCompositeDestinationAtop;
 	else if (version >= 0x1060)
-		compositingOperation = NSCompositeHighlight;
+		compositingOperation = NSCompositeSourceOver;
 	else
 		compositingOperation = NSCompositeCopy;
 		
